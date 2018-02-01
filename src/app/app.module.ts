@@ -10,14 +10,17 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { UserService } from './user.service';
+import { AuthService } from './auth.service';
+import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { UserService } from './user.service';
     MatModule,
     AppRoutingModule
   ],
-  providers: [UserService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

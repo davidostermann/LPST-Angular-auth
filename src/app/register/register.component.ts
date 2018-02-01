@@ -5,7 +5,7 @@ import {
   Validators
 } from '@angular/forms';
 import { PasswordValidation } from '../password-validation';
-import { UserService } from '../user.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +15,7 @@ import { UserService } from '../user.service';
 export class RegisterComponent implements OnInit {
   user: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserService) {}
+  constructor(private fb: FormBuilder, private authService: AuthService) {}
 
   ngOnInit() {
     this.user = this.fb.group(
@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
 
   createUser() {
     console.log('this.user : ', this.user.value);
-    this.userService.register(this.user.value).subscribe(() => {
+    this.authService.register(this.user.value).subscribe(() => {
       console.log('coucou ENVOYE');
     });
   }
