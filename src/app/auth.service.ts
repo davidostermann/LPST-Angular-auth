@@ -17,6 +17,10 @@ export class AuthService {
     return false;
   }
 
+  getToken(): string {
+    return localStorage.getItem('bearer').replace('JWT', 'bearer');
+  }
+
   register(user) {
     const u = {
       firstname: user.firstName,

@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthService } from './auth.service';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './auth.guard';
+import { ListService } from './list.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { AuthGuard } from './auth.guard';
     MatModule,
     AppRoutingModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
