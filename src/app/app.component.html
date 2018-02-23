@@ -1,6 +1,7 @@
 <mat-menu #appMenu="matMenu" yPosition="above">
   <button mat-menu-item routerLink="/login"> Log in </button>
   <button mat-menu-item routerLink="/register"> Register </button>
+  <button *ngIf="auth.isLoggedIn()" mat-menu-item routerLink="/profile"> Profile </button>
 </mat-menu>
 
 <mat-toolbar color="primary">
